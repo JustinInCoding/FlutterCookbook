@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_theme/layoutsinflutter/buildingLayouts.dart';
 import 'package:flutter_theme/myCustomForm.dart';
 import 'package:flutter_theme/tabPage.dart';
 import 'package:flutter_theme/userinterface/introductionWidgets.dart';
@@ -6,6 +8,7 @@ import 'package:flutter_theme/userinterface/introductionWidgets.dart';
 import 'animation/animations.dart';
 
 void main() {
+  debugPaintSizeEnabled = true; // Set to true for visual layout
   runApp(MyApp());
 }
 
@@ -75,6 +78,16 @@ class MyHomePage extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyCustomForm()),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text("Building Layouts", style: TextStyle(color: Colors.black54),),
+                trailing: Icon(Icons.keyboard_arrow_right, color: Colors.black54,),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => BuildingLayouts()),
                   );
                 },
               ),
